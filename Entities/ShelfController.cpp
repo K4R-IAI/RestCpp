@@ -59,9 +59,9 @@ bool ShelfController::post_shelf(const std::string& store_id, const Json::Value&
 bool ShelfController::post_shelf(const Json::Value& shelf)
 {
   if (shelf["cadPlanId"].isString() &&
-      shelf["depth"].isNumeric() &&
+      shelf["depth"].isInt() &&
       shelf["externalReferenceId"].isString() &&
-      shelf["height"].isNumeric() &&
+      shelf["height"].isInt() &&
       shelf["orientationY"].isNumeric() &&
       shelf["orientationYaw"].isNumeric() &&
       shelf["orientationZ"].isNumeric() &&
@@ -69,7 +69,7 @@ bool ShelfController::post_shelf(const Json::Value& shelf)
       shelf["positionX"].isNumeric() &&
       shelf["positionY"].isNumeric() &&
       shelf["positionZ"].isNumeric() &&
-      shelf["productGroupId"].isNumeric() &&
+      shelf["productGroupId"].isInt() &&
       shelf["width"].isNumeric())
   {
     std::string link_tail = "/stores/" + this->store_id + "/shelves";

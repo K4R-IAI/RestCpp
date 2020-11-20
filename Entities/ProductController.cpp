@@ -26,13 +26,13 @@ Json::Value ProductController::get_product(const std::string &product_id)
 
 bool ProductController::post_product(const Json::Value &product, const std::string &product_id)
 {
-  if (product["depth"].isNumeric() &&
+  if (product["depth"].isInt() &&
       product["description"].isString() &&
       product["gtin"].isString() &&
-      product["height"].isNumeric() &&
-      product["length"].isNumeric() &&
+      product["height"].isInt() &&
+      product["length"].isInt() &&
       product["name"].isString() &&
-      product["weight"].isNumeric())
+      product["weight"].isInt())
   {
     return this->post_entity(product, product_id);
   }

@@ -1,4 +1,4 @@
-// To compile: g++ CustomerTutorial.cpp -o CustomerTutorial -lcurl -lcurlpp -ljsoncpp 
+// To compile: g++ CustomerTutorial.cpp -o Test -lcurl -lcurlpp -ljsoncpp 
 
 #include "Entities/CustomerController.cpp"
 // #include "Entities/CharacteristicController.cpp"

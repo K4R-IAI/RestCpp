@@ -57,9 +57,9 @@ bool ShelfLayerController::post_shelf_layer(const std::string& shelf_id, const J
 
 bool ShelfLayerController::post_shelf_layer(const Json::Value& shelf_layer)
 {
-  if (shelf_layer["depth"].isNumeric() &&
+  if (shelf_layer["depth"].isInt() &&
       shelf_layer["externalReferenceId"].isString() &&
-      shelf_layer["height"].isNumeric() &&
+      shelf_layer["height"].isInt() &&
       shelf_layer["level"].isNumeric() &&
       shelf_layer["positionZ"].isNumeric() &&
       shelf_layer["type"].isString() &&

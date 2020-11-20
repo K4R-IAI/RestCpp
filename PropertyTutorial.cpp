@@ -1,4 +1,4 @@
-// To compile: g++ PropertyTutorial.cpp -o PropertyTutorial -lcurl -lcurlpp -ljsoncpp
+// To compile: g++ PropertyTutorial.cpp -o Test -lcurl -lcurlpp -ljsoncpp
 
 // #include "Entities/CustomerController.cpp"
 // #include "Entities/CharacteristicController.cpp"
