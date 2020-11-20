@@ -32,7 +32,7 @@ ShelfLayerController::ShelfLayerController(const char* link) : EntityController:
 bool ShelfLayerController::set_shelf(const std::string& shelf_id)
 {
   Json::Value shelf = this->shelf_controller->get_shelf(shelf_id);
-  if(shelf["id"].toStyledString() == shelf_id)
+  if(shelf["id"].asString() == shelf_id)
   {
     this->shelf_id = shelf_id;
     return true;
@@ -46,7 +46,7 @@ bool ShelfLayerController::set_shelf(const std::string& shelf_id)
 
 Json::Value ShelfLayerController::get_shelf_layer(const std::string& shelf_layer_id)
 {
-  std::string link_tail = "/shelflayers/" + shelf_layer_id;
+  std::string link_tail = "shelflayers/" + shelf_layer_id;
   return this->get_entity(link_tail);
 }
 
@@ -60,17 +60,17 @@ bool ShelfLayerController::post_shelf_layer(const Json::Value& shelf_layer)
   if (shelf_layer["depth"].isNumeric() &&
       shelf_layer["externalReferenceId"].isString() &&
       shelf_layer["height"].isNumeric() &&
+      shelf_layer["level"].isNumeric() &&
       shelf_layer["positionZ"].isNumeric() &&
-      shelf_layer["shelfId"].isNumeric() &&
       shelf_layer["type"].isString() &&
       shelf_layer["width"].isNumeric())
   {
-    std::string link_tail = "/stores/" + this->shelf_id + "/shelflayers";
+    std::string link_tail = "shelves/" + this->shelf_id + "/shelflayers";
     return this->post_entity(shelf_layer, link_tail);
   }
   else
   {
-    std::cout << "Invalid Shelf" << std::endl;
+    std::cout << "Invalid Shelf layer" << std::endl;
     return false;
   }
 }

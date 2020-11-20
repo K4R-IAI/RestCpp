@@ -33,7 +33,7 @@ ShelfController::ShelfController(const char* link) : EntityController::EntityCon
 bool ShelfController::set_store(const std::string& store_id)
 {
   Json::Value store = this->store_controller->get_store(store_id);
-  if(store["id"].toStyledString() == store_id)
+  if(store["id"].asString() == store_id)
   {
     this->store_id = store_id;
     return true;
@@ -70,7 +70,6 @@ bool ShelfController::post_shelf(const Json::Value& shelf)
       shelf["positionY"].isNumeric() &&
       shelf["positionZ"].isNumeric() &&
       shelf["productGroupId"].isNumeric() &&
-      shelf["storeId"].isNumeric() &&
       shelf["width"].isNumeric())
   {
     std::string link_tail = "/stores/" + this->store_id + "/shelves";
