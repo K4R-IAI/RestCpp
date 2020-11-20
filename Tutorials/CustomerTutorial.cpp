@@ -1,12 +1,12 @@
 // To compile: g++ CustomerTutorial.cpp -o Test -lcurl -lcurlpp -ljsoncpp 
 
-#include "Entities/CustomerController.cpp"
-// #include "Entities/CharacteristicController.cpp"
-// #include "Entities/Product.cpp"
-// #include "Entities/Property.cpp"
-// #include "Entities/Shelf.cpp"
-// #include "Entities/ShelfLayer.cpp"
-// #include "Entities/Store.cpp"
+#include "../Entities/CustomerController.cpp"
+// #include "../Entities/CharacteristicController.cpp"
+// #include "../Entities/Product.cpp"
+// #include "../Entities/Property.cpp"
+// #include "../Entities/Shelf.cpp"
+// #include "../Entities/ShelfLayer.cpp"
+// #include "../Entities/Store.cpp"
 
 #define A_1
 #define A_2
